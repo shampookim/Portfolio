@@ -6,13 +6,137 @@
     <title>Jeagun's Portfolio</title>
     <meta name="description" content="Portfolio software engineer Jeagun">
     <meta name="author" content="Jeagun">
-    <link rel="icon" type="image/png" href="images/logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <script src="https://kit.fontawesome.com/d7525fa044.js" 
+        crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" 
+        rel="stylesheet">
     <!-- font-family: 'Open Sans', sans-serif; -->
     <link rel="stylesheet" href="style.css">
     <script src="main.js" defer></script>
 </head>
 <body>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="navbar__logo">
+            <i class="fab fa-diaspora"></i>
+            <a href="#">Jeagun</a>
+        </div>
+        <ui class="navber__menu">
+            <li class="navbar__menu__item">Home</li>
+            <li class="navbar__menu__item">About</li>
+            <li class="navbar__menu__item">Skills</li>
+            <li class="navbar__menu__item">Project</li>
+            <li class="navbar__menu__item">Testimonials</li>
+            <li class="navbar__menu__item">Contact</li>
+        </ui>
+        <div class="navbar_menu">
+
+        </div>
+    </nav>
+
+    <!-- Home -->
+    <section id="home">
+        <img 
+            src="images/profile.jpg" 
+            alt="Jeagun's Profile Photo" 
+            class="home__avatar"
+        />
+        <h1>Hello, <br/> I'm Dream Coder</h1>
+        <h2>A Software engineer</h2>
+        <button class="home__contact">Contact Me</button>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+    <h1>About me</h1>
+    <p>전남대학교 컴퓨터통신공학을 전공하여 4년동안 c,c++,컴퓨터구조, 알고리즘, 자료구조 등을 공부하였고
+        졸업이후에 삼성청년SW아카데미에 들어와서 js,css,html과 Spring boot, Mysql을 배우고 이를 활용해서
+        집값 비교 사이트, 마스크 인식 입출입 시스템, 알고리즘 문제추천 사이트 등의 프로젝트를 진행하였습니다.
+        벡엔드에 관심을 두고 프론트엔드와 AI 딥러닝 등 다양한 분야에 관심을 두고 
+        풀스텍 개발자로의 성장을 목표로 하고 있습니다.
+    </p>
+    <div class="about__majors">
+        <div class="major">
+            <div class="major__icon">
+                <i class="fab fa-vuejs"></i>
+            </div>
+            <div class="major__title">Front-end</div>
+            <div class="major__description">
+                HTML, CSS, JavaScript,
+                <br/>Vue
+            </div>
+        </div>
+        <div class="major">
+            <div class="major__icon">
+                <i class="fas fa-server"></i>
+            </div>
+            <div class="major__title">Back-end</div>
+            <div class="major__description">
+                Spring boot, Flask,
+                <br/>Mysql
+            </div>
+        </div>
+        <div class="major">
+            <div class="major__icon">
+                <i class="fas fa-brain"></i>
+            </div>
+            <div class="major__title">AI</div>
+            <div class="major__description">
+                Python, Jupyter Notebook
+                <br/>DeepLearning
+            </div>
+        </div>
+    </div>
+    <div class="about_jobs">
+        <div class="job">
+            <img 
+                src="images/jobs/전남대_logo.png" 
+                alt="전남대_logo" 
+                class="job__logo"
+            />
+            <p class="job__name">
+                영상정보처리연구실 실원 - 보행자 이상징후 검출, 외래 잡초 분류 프로젝트에 참여
+                <br/>사전 자료 조사, 이미지 전처리 담당 및 토이프로젝트 진행
+            </p>
+            <p class="job__period"> 2016 6 - 2020 1</p>
+        </div>
+        <div class="job">
+            <img 
+                src="images/jobs/SSAFY_logo.png" 
+                alt="SSAFY_logo" 
+                class="job__logo"
+            />
+            <p class="job__name">
+                SSAFY 3기 1학기 800 시간 교육과정 이수 - 알고리즘 문제해결, DB, Js,HTML,CSS, Spring, Vue
+            </p>
+            <p class="job__period"> 2020 1 - 2020 6</p>
+        </div>
+        <div class="job">
+            <img 
+                src="images/jobs/SSAFY_logo.png" 
+                alt="SSAFY_logo" 
+                class="job__logo"
+            />
+            <p class="job__name">
+                SSAFY 3기 2학기 프로젝트 - IOT 마스크 인식 입출입 시스템, Big Data 알고리즘 문제추천 웹 서비스
+            </p>
+            <p class="job__period"> 2020 6 - Until now</p>
+        </div>
+    </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills"></section>
+
+    <!-- Project -->
+    <section id="project"></section>
+
+    <!-- Testimonials -->
+    <section id="testimonials"></section>
+
+    <!-- Contact -->
+    <section id="contact"></section>
     
 </body>
 </html>
