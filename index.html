@@ -18,37 +18,38 @@
 <body>
     <!-- Navbar -->
     <nav id="navbar">
-        <div class="navbar__logo">
+        <div class="navbar_logo">
             <i class="fab fa-diaspora"></i>
             <a href="#">Jeagun</a>
         </div>
-        <ui class="navber__menu">
-            <li class="navbar__menu__item">Home</li>
-            <li class="navbar__menu__item">About</li>
-            <li class="navbar__menu__item">Skills</li>
-            <li class="navbar__menu__item">Project</li>
-            <li class="navbar__menu__item">Testimonials</li>
-            <li class="navbar__menu__item">Contact</li>
+        <ul class="navbar_menu">
+            <li class="navbar_menu_item active">Home</li>
+            <li class="navbar_menu_item">About</li>
+            <li class="navbar_menu_item">Skills</li>
+            <li class="navbar_menu_item">Project</li>
+            <li class="navbar_menu_item">Testimonials</li>
+            <li class="navbar_menu_item">Contact</li>
         </ui>
         <div class="navbar_menu">
 
         </div>
     </nav>
 
+
     <!-- Home -->
     <section id="home">
         <img 
             src="images/profile.jpg" 
             alt="Jeagun's Profile Photo" 
-            class="home__avatar"
+            class="home_avatar"
         />
-        <h1>Hello, <br/> I'm Dream Coder</h1>
-        <h2>A Software engineer</h2>
-        <button class="home__contact">Contact Me</button>
+        <h1 class="home_title">Hello, <br/> I'm Dream Coder</h1>
+        <h2 class="home_description">A Software engineer</h2>
+        <button class="home_contact">Contact Me</button>
     </section>
 
     <!-- About -->
-    <section id="about">
+    <section id="about" class="section section_container">
     <h1>About me</h1>
     <p>전남대학교 컴퓨터통신공학을 전공하여 4년동안 c,c++,컴퓨터구조, 알고리즘, 자료구조 등을 공부하였고
         졸업이후에 삼성청년SW아카데미에 들어와서 js,css,html과 Spring boot, Mysql을 배우고 이를 활용해서
@@ -56,33 +57,33 @@
         벡엔드에 관심을 두고 프론트엔드와 AI 딥러닝 등 다양한 분야에 관심을 두고 
         풀스텍 개발자로의 성장을 목표로 하고 있습니다.
     </p>
-    <div class="about__majors">
+    <div class="about_majors">
         <div class="major">
-            <div class="major__icon">
+            <div class="major_icon">
                 <i class="fab fa-vuejs"></i>
             </div>
-            <div class="major__title">Front-end</div>
-            <div class="major__description">
+            <h2 class="major_title">Front-end</h2>
+            <div class="major_description">
                 HTML, CSS, JavaScript,
                 <br/>Vue
             </div>
         </div>
         <div class="major">
-            <div class="major__icon">
+            <div class="major_icon">
                 <i class="fas fa-server"></i>
             </div>
-            <div class="major__title">Back-end</div>
-            <div class="major__description">
+            <h2 class="major_title">Back-end</h2>
+            <div class="major_description">
                 Spring boot, Flask,
                 <br/>Mysql
             </div>
         </div>
         <div class="major">
-            <div class="major__icon">
+            <div class="major_icon">
                 <i class="fas fa-brain"></i>
             </div>
-            <div class="major__title">AI</div>
-            <div class="major__description">
+            <h2 class="major_title">AI</h2>
+            <div class="major_description">
                 Python, Jupyter Notebook
                 <br/>DeepLearning
             </div>
@@ -93,157 +94,170 @@
             <img 
                 src="images/jobs/전남대_logo.png" 
                 alt="전남대_logo" 
-                class="job__logo"
+                class="job_logo"
             />
-            <p class="job__name">
-                영상정보처리연구실 실원 - 보행자 이상징후 검출, 외래 잡초 분류 프로젝트에 참여
-                <br/>사전 자료 조사, 이미지 전처리 담당 및 토이프로젝트 진행
-            </p>
-            <p class="job__period"> 2016 6 - 2020 1</p>
+            <div class="job_description">
+                <p class="job_name">
+                    영상정보처리연구실 실원 - 보행자 이상징후 검출, 외래 잡초 분류 프로젝트에 참여
+                    <br/>사전 자료 조사, 이미지 전처리 담당 및 토이프로젝트 진행
+                </p>
+                <p class="job_period"> 2016 6 - 2020 1</p>
+            </div>
+            
         </div>
         <div class="job">
             <img 
                 src="images/jobs/SSAFY_logo.png" 
                 alt="SSAFY_logo" 
-                class="job__logo"
+                class="job_logo"
             />
-            <p class="job__name">
-                SSAFY 3기 1학기 800 시간 교육과정 이수 - 알고리즘 문제해결, DB, Js,HTML,CSS, Spring, Vue
-            </p>
-            <p class="job__period"> 2020 1 - 2020 6</p>
+            <div class="job_description">
+                <p class="job_name">
+                    SSAFY 3기 1학기 800 시간 교육과정 이수 - 알고리즘 문제해결, DB, Js,HTML,CSS, Spring, Vue
+                </p>
+                <p class="job_period"> 2020 1 - 2020 6</p>
+            </div>
+            
         </div>
         <div class="job">
             <img 
                 src="images/jobs/SSAFY_logo.png" 
                 alt="SSAFY_logo" 
-                class="job__logo"
+                class="job_logo"
             />
-            <p class="job__name">
-                SSAFY 3기 2학기 프로젝트 - IOT 마스크 인식 입출입 시스템, Big Data 알고리즘 문제추천 웹 서비스
-            </p>
-            <p class="job__period"> 2020 6 - Until now</p>
+            <div class="job_description">
+                <p class="job_name">
+                    SSAFY 3기 2학기 프로젝트 - IOT 마스크 인식 입출입 시스템, Big Data 알고리즘 문제추천 웹 서비스
+                </p>
+                <p class="job_period"> 2020 6 - Until now</p>
+            </div>
+            
         </div>
     </div>
     </section>
 
     <!-- Skills -->
-    <section id="skills">
-        <h1>Skills</h1>
-        <h2>Skills & Attributes</h2>
-        <p>
-            여러 다양한 프로젝트를 진행한 경험이 있습니다. 
-            AI, BigData와 같은 새로운 기술을 배우는 것에 관심이 있습니다.
-            삼성청년SW아카데미를 통해서 협업에 대한 능력들을 키웠고 
-            업무에 적응하는것과 제 실력을 키우는데 있어 계획을 잘 세우고 
-            아침운동이나 게임과 같은 취미생활을 통해서 스트레스를 잘 관리할 수 있습니다.
-        </p>
-        <div class="skillsot">
-            <div class="skillset__left">
-                <div class="skillset__title">Skills</div>
-                <div class="skill">
-                    <div class="skill__description">
-                        <span>Java</span>
-                        <span>99%</span>
+    <section id="skills" class="section">
+        
+        <div class="section_container">
+            <h1>Skills</h1>
+            <h2>Skills & Attributes</h2>
+            <p>
+                여러 다양한 프로젝트를 진행한 경험이 있습니다. 
+                AI, BigData와 같은 새로운 기술을 배우는 것에 관심이 있습니다.
+                삼성청년SW아카데미를 통해서 협업에 대한 능력들을 키웠고 
+                업무에 적응하는것과 제 실력을 키우는데 있어 계획을 잘 세우고 
+                아침운동이나 게임과 같은 취미생활을 통해서 스트레스를 잘 관리할 수 있습니다.
+            </p>
+            <div class="skillset">
+                <div class="skillset_left">
+                    <div class="skillset_title">Skills</div>
+                    <div class="skill">
+                        <div class="skill_description">
+                            <span>Java</span>
+                            <span>99%</span>
+                        </div>
+                        <div class="skill_bar">
+                            <div class="skill_value" style="width: 99%;"></div>
+                        </div>
                     </div>
-                    <div class="skill__bar">
-                        <div class="skill__value"></div>
+                    <div class="skill">
+                        <div class="skill_description">
+                            <span>Python</span>
+                            <span>99%</span>
+                        </div>
+                        <div class="skill_bar">
+                            <div class="skill_value" style="width: 99%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill_description">
+                            <span>SQL</span>
+                            <span>99%</span>
+                        </div>
+                        <div class="skill_bar">
+                            <div class="skill_value" style="width: 99%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill_description">
+                            <span>HTML</span>
+                            <span>99%</span>
+                        </div>
+                        <div class="skill_bar">
+                            <div class="skill_value" style="width: 99%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill_description">
+                            <span>CSS</span>
+                            <span>99%</span>
+                        </div>
+                        <div class="skill_bar">
+                            <div class="skill_value" style="width: 99%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill_description">
+                            <span>JavaScript</span>
+                            <span>99%</span>
+                        </div>
+                        <div class="skill_bar">
+                            <div class="skill_value" style="width: 99%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill_description">
+                            <span>Vue</span>
+                            <span>99%</span>
+                        </div>
+                        <div class="skill_bar">
+                            <div class="skill_value" style="width: 99%;"></div>
+                        </div>
                     </div>
                 </div>
-                <div class="skill">
-                    <div class="skill__description">
-                        <span>Python</span>
-                        <span>99%</span>
+                <div class="skillset_right">
+                    <div class="tools">
+                        <div class="skillset_title">Tools</div>
+                        <ul class="tools_list">
+                            <li><span>Spring Boot</span></li>
+                            <li><span>Visual Studio Code</span></li>
+                            <li><span>Jupyter Notebook</span></li>
+                            <li><span>Anaconda</span></li>
+                            <li><span>Pycharm</span></li>
+                        </ul>
                     </div>
-                    <div class="skill__bar">
-                        <div class="skill__value"></div>
+                    <div class="etc">
+                        <div class="skillset_title">Etc</div>
+                        <ui class="etc_list">
+                            <li><span>Git</span></li>
+                            <li><span>Jira</span></li>
+                        </ui>
                     </div>
-                </div>
-                <div class="skill">
-                    <div class="skill__description">
-                        <span>SQL</span>
-                        <span>99%</span>
-                    </div>
-                    <div class="skill__bar">
-                        <div class="skill__value"></div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <div class="skill__description">
-                        <span>HTML</span>
-                        <span>99%</span>
-                    </div>
-                    <div class="skill__bar">
-                        <div class="skill__value"></div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <div class="skill__description">
-                        <span>CSS</span>
-                        <span>99%</span>
-                    </div>
-                    <div class="skill__bar">
-                        <div class="skill__value"></div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <div class="skill__description">
-                        <span>JavaScript</span>
-                        <span>99%</span>
-                    </div>
-                    <div class="skill__bar">
-                        <div class="skill__value"></div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <div class="skill__description">
-                        <span>Vue</span>
-                        <span>99%</span>
-                    </div>
-                    <div class="skill__bar">
-                        <div class="skill__value"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="skillset__right">
-                <div class="tools">
-                    <div class="skillset__title">Tools</div>
-                    <ul class="tools__list">
-                        <li><span>Spring Boot</span></li>
-                        <li><span>Visual Studio Code</span></li>
-                        <li><span>Jupyter Notebook</span></li>
-                        <li><span>Anaconda</span></li>
-                        <li><span>Pycharm</span></li>
-                    </ul>
-                </div>
-                <div class="etc">
-                    <div class="skillset__title">Etc</div>
-                    <ui class="etc__list">
-                        <li><span>Git</span></li>
-                        <li><span>Jira</span></li>
-                    </ui>
                 </div>
             </div>
         </div>
+        
     </section>
 
     <!-- Project -->
-    <section id="project">
+    <section id="project" class="section">
         <h1>My work</h1>
         <h3>Projects</h3>
-        <div class="work__categories">
-            <button class="category__btn">All <span class="category__count">4</span></button>
-            <button class="category__btn">Front-end <span class="category__count">1</span></button>
-            <button class="category__btn">Back-end <span class="category__count">2</span></button>
-            <button class="category__btn">AI <span class="category__count">1</span></button>
+        <div class="work_categories">
+            <button class="category_btn">All <span class="category_count">4</span></button>
+            <button class="category_btn">Front-end <span class="category_count">1</span></button>
+            <button class="category_btn">Back-end <span class="category_count">2</span></button>
+            <button class="category_btn">AI <span class="category_count">1</span></button>
         </div>
-        <div class="work__projects">
+        <div class="work_projects">
             <a 
                 href="" 
                 class="project"
                 target="blank"
             >
-                <img src="images/projects/" alt="" class="project__img">
-                <div class="project__description">
+                <img src="images/projects/" alt="" class="project_img">
+                <div class="project_description">
                     <h3>Project</h3>
                     <span>Explanation</span>
                 </div>
@@ -253,8 +267,8 @@
                 class="project"
                 target="blank"
             >
-                <img src="images/projects/" alt="" class="project__img">
-                <div class="project__description">
+                <img src="images/projects/" alt="" class="project_img">
+                <div class="project_description">
                     <h3>Project</h3>
                     <span>Explanation</span>
                 </div>
@@ -264,8 +278,8 @@
                 class="project"
                 target="blank"
             >
-                <img src="images/projects/" alt="" class="project__img">
-                <div class="project__description">
+                <img src="images/projects/" alt="" class="project_img">
+                <div class="project_description">
                     <h3>Project</h3>
                     <span>Explanation</span>
                 </div>
@@ -275,8 +289,8 @@
                 class="project"
                 target="blank"
             >
-                <img src="images/projects/" alt="" class="project__img">
-                <div class="project__description">
+                <img src="images/projects/" alt="" class="project_img">
+                <div class="project_description">
                     <h3>Project</h3>
                     <span>Explanation</span>
                 </div>
@@ -285,10 +299,41 @@
     </section>
 
     <!-- Testimonials -->
-    <section id="testimonials"></section>
+    <section id="testimonials" class="section">
+        <h1>Testimonials</h1>
+        <h3>See what they say about me</h3>
+        <div class="testimonials">
+            <div class="testimonial">
+                <img src="images/testimonial/" alt="" class="testimonial_avator">
+                <div class="testimonial_speech-bubble">
+                    <p>어떤 말 해줬는지 적는 곳</p>
+                    <p class="name"><a href="">이름</a> / 같이 있었던 곳</p>
+                </div>
+            </div>
+            <div class="testimonial">
+                <img src="images/testimonial/" alt="" class="testimonial_avator">
+                <div class="testimonial_speech-bubble">
+                    <p>어떤 말 해줬는지 적는 곳</p>
+                    <p class="name"><a href="">이름</a> / 같이 있었던 곳</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Contact -->
-    <section id="contact"></section>
+    <section id="contact" class="section">
+        <h1 class="contact_title">Let's talk</h1>
+        <h2 class="contact_email">pby7641@gmail.com</h2>
+        <div class="contact_links">
+            <a href="" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="#" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <div class="contact_right">2020 Roaming in Dream - All rights reserved</div>
+        </div>
+    </section>
     
 </body>
 </html>
