@@ -67,6 +67,13 @@ border: none;
 outline: none;
 }
 
+
+
+
+
+
+
+
 /* Typography */
 h1{
 font-size: var(--font-large);
@@ -96,13 +103,36 @@ color: var(--color-black);
 margin: 4px 0;
 }
 
+
+
+
+
+
+
+
+
+
+/* Navbar */
 #navbar{
-display: flex;
-justify-content: space-between;
-background-color: var(--color-pink);
-align-items: center;
-color: var(--color-white);
-padding: 16px;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color:  transparent;
+  align-items: center;
+  color: var(--color-white);
+  padding: 16px;
+  transition: all var(--animation-duration) ease-in-out;
+}
+
+/* navbar가 스크르롤 될때
+navbar가 내려가는 만큼 변하는데
+navbar 길이만큼 내려가면  
+gogo main.js*/
+
+#navbar.navbar_dark{
+  background-color: var(--color-pink);
+  padding: 8px;
 }
 
 .navbar_logo{
@@ -144,9 +174,10 @@ background-color: var(--color-dark-pink);
 
 /* Home */
 #home{ 
-background: url(images/background.png) center/cover no-repeat;
-padding: 40px;
-text-align: center;
+  background: url(images/background.png) center/cover no-repeat;
+  padding: 40px;
+  padding-top: 120px;
+  text-align: center;
 }
 
 .home_avatar{
