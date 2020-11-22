@@ -130,7 +130,19 @@ border: 1px solid var(--color-white);
 background-color: var(--color-dark-pink);
 }
 
+.navbar_toggle-btn{
+  position: absolute;
+  right: 32px;
+  font-size: 24px;
+  color: var(--color-white);
+  top: 26px;
+  display: none;
+}
 
+
+
+
+/* Home */
 #home{ 
 background: url(images/background.png) center/cover no-repeat;
 padding: 40px;
@@ -159,6 +171,12 @@ border: 2px solid var(--color-white);
 border-radius: var(--size-border-radius);
 }
 
+
+
+
+
+
+
 /* Section common */
 .section{
 padding: 50px;
@@ -170,6 +188,11 @@ margin: auto;
 max-width: 1200px;
 margin: auto;
 }
+
+
+
+
+
 
 /* About */
 .about_majors{
@@ -237,6 +260,9 @@ font-size: var(--font-micro);
 
 
 
+
+
+
 /* Skill */
 #skills{
 background-color: var(--color-yellow); 
@@ -294,8 +320,12 @@ padding: 20px;
 }
 
 
-/* Work */
 
+
+
+
+
+/* Work */
 .work_category{
 margin: 40px;
 }
@@ -396,8 +426,10 @@ background-color: var(--color-dark-white);
 } 
 
 
-/* Testimonial */
 
+
+
+/* Testimonial */
 #testimonials{
   background-color: var(--color-light-white);
 }
@@ -467,6 +499,62 @@ background-color: var(--color-dark-white);
   color: var(--color-yellow);
   transition: all var(--animation-duration) ease-in;
 }
+
+
+
+
+/* For below 768px screen Width*/
+/* 햄버거 버튼을 여기에다가 적어주면 될거같지만
+미디어 쿼리에는 최소한의 것만 들어가야한다 
+즉 미디어쿼리가 있던없던 토글 버튼은 HTML에 무조건 들어가있는다 
+미디어쿼리는 스크린 사이즈가 작을때만 들어가는거기때문에 
+밖에 가려지는걸 만들자*/
+@media screen and (max-width: 768px){
+  .navbar_toggle-btn{
+    display: block;
+  }
+  
+  #navbar{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar_menu{
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    display: none
+  }
+
+  .about_majors{
+    flex-direction: column;
+  }
+
+  .major{
+    margin-bottom: 38px;
+  }
+
+  .skillset{
+    flex-direction: column;
+  }
+
+  .project{
+    flex-grow: 1;
+  }
+
+  .testimonial_avator{
+    width: 80px;
+    height: 80px;
+  }
+}
+
+
+
+
+
+
+
+
 
 
 
