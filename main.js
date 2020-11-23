@@ -49,9 +49,22 @@ document.addEventListener('scroll',()=>{
 
 
 
+const arrow = document.querySelector('.arrow-btn');
+document.addEventListener('scroll',()=>{
+    console.log('scroll');
+    if(window.scrollY > homeHeight){
+        arrow.classList.add('visible');
+    }
+    else{
+        arrow.classList.remove('visible');
+    }
+});
 
-
-
+arrow.addEventListener('click',()=>{
+    console.log('arrow click');
+    const scrollTo = document.querySelector('#home');
+    scrollTo.scrollIntoView({behavior:'smooth'});
+});
 
 
 

@@ -170,6 +170,27 @@ background-color: var(--color-dark-pink);
   display: none;
 }
 
+.arrow-btn{
+  position: fixed;
+  bottom: 50px;
+  right: 50px; 
+
+  color: var(--color-white);
+  background-color: var(--color-pink);
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  font-size: 50px;
+
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--animation-duration) ease-in;
+}
+
+.arrow-btn.visible{
+  opacity: 1;
+  pointer-events: auto;
+}
 
 
 
