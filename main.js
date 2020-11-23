@@ -39,7 +39,7 @@ function scrollIntoView(selector){
 
 
 
-
+// home부분 스크롤 내리면 연하게 보여지기
 const home = document.querySelector('.home_container');
 const homeHeight = home.getBoundingClientRect().height;
 document.addEventListener('scroll',()=>{
@@ -48,10 +48,9 @@ document.addEventListener('scroll',()=>{
 });
 
 
-
+// Arrow up 버튼 home으로 바로 올라가기
 const arrow = document.querySelector('.arrow-btn');
 document.addEventListener('scroll',()=>{
-    console.log('scroll');
     if(window.scrollY > homeHeight){
         arrow.classList.add('visible');
     }
@@ -61,10 +60,51 @@ document.addEventListener('scroll',()=>{
 });
 
 arrow.addEventListener('click',()=>{
-    console.log('arrow click');
     const scrollTo = document.querySelector('#home');
     scrollTo.scrollIntoView({behavior:'smooth'});
 });
+
+
+
+
+
+
+
+// Projects
+const workCategories = document.querySelector('.work_categories');
+const workProjects = document.querySelector('.work_projects');
+const projects = document.querySelectorAll('.project');
+
+workCategories.addEventListener('click',(event)=>{
+    const filter = event.target.dataset.filter || event.target.parentNode.dataset.filter; 
+    if(filter == null){
+        console.log('Error return null');
+        return;
+    }
+    workProjects.classList.add('animation-out');
+    
+
+    setTimeout(() => {
+        projects.forEach((project)=>{
+            if(filter ==='*' || filter === project.dataset.type){
+                project.classList.remove('invisible');
+            }
+            else{
+                project.classList.add('invisible');
+            }
+        });
+        workProjects.classList.remove('animation-out');
+    }, 300);
+});
+
+
+
+
+
+
+
+
+
 
 
 
