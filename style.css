@@ -179,6 +179,7 @@ background-color: var(--color-dark-pink);
   padding: 40px;
   padding-top: 120px;
   text-align: center;
+  opacity: 1;
 }
 
 .home_avatar{

@@ -4,13 +4,14 @@
 const navbar = document.querySelector('#navbar');
 const navbarHeight = navbar.getBoundingClientRect().height;
 document.addEventListener('scroll',()=>{
+    
     if(window.scrollY > navbarHeight){
         navbar.classList.add('navbar_dark');
     }  
     else{
         navbar.classList.remove('navbar_dark');
     }
-})
+});
 
 
 // Handle scrolling when tapping on the navbar menu
@@ -39,8 +40,12 @@ function scrollIntoView(selector){
 
 
 
-
-
+const home = document.querySelector('.home_container');
+const homeHeight = home.getBoundingClientRect().height;
+document.addEventListener('scroll',()=>{
+    const opa = (1-window.scrollY/homeHeight);
+    home.style.opacity = opa;
+});
 
 
 
