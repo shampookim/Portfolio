@@ -43,8 +43,12 @@ homeContact.addEventListener('click',()=>{
 });
 
 function scrollIntoView(selector){
-    const scrollTo = document.querySelector(selector);
-    scrollTo.scrollIntoView({behavior:'smooth'});
+    const yOffset = -20; 
+    const select = document.querySelector(selector);
+    console.log(select);
+    const height = select.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    console.log(height);
+    window.scrollTo({top: height, behavior: 'smooth'});
 }
 
 

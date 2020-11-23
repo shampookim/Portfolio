@@ -225,7 +225,9 @@ border: 2px solid var(--color-white);
 border-radius: var(--size-border-radius);
 }
 
-
+.home_contact:hover{
+  background-color: var(--color-orange);
+}
 
 
 
@@ -389,6 +391,7 @@ border: 1px solid var(--color-dark-white);
 border-radius: var(--size-border-radius);
 font-size: var(--font-regular);
 padding: 8px 48px;
+position: relative;
 }
 
 .category_btn.selected,
@@ -412,9 +415,9 @@ width: 24px;
 height: 24px;
 line-height: 24px;
 display: inline-block;
-position: relative;
+position: absolute;
 top: -20px;
-left: 4px;
+right: 16px;
 opacity: 0;
 transition: all var(--animation-duration) ease-in;
 }
@@ -513,7 +516,7 @@ background-color: var(--color-dark-white);
   height: 150px;
   background-color: var(--color-pink);
   border-radius: 50%;
-  margin: 12px;
+  margin: 0px;
 }
 
 .testimonial_avator:nth-child(odd){
@@ -574,8 +577,24 @@ background-color: var(--color-dark-white);
 미디어쿼리는 스크린 사이즈가 작을때만 들어가는거기때문에 
 밖에 가려지는걸 만들자*/
 @media screen and (max-width: 768px){
+  :root{  
+    /* Font size */
+    --font-large: 30px;
+    --font-medium: 18px;
+    --font-regular: 16px;
+    --font-small: 14px;
+    --font-micro: 12px;
+  }
+
+
+  .section{
+    padding: 16px;
+  }
   .navbar_toggle-btn{
     display: block;
+    top: 16px;
+    right: 16px;
+    font-size: var(--font-medium);
   }
   
   #navbar{
@@ -583,6 +602,10 @@ background-color: var(--color-dark-white);
     align-items: flex-start;
     background-color: var(--color-pink);
   }
+  #navbar.navbar_dark{
+    padding: 16px;;
+  }
+  
 
   .navbar_menu{
     flex-direction: column;
@@ -597,23 +620,53 @@ background-color: var(--color-dark-white);
 
   .about_majors{
     flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 0px;
   }
 
   .major{
-    margin-bottom: 38px;
+    margin-bottom: 30px;
   }
 
   .skillset{
     flex-direction: column;
   }
 
+
+  .category__btn {
+    margin: 4px 0;
+    width: 100%;
+  }
   .project{
     flex-grow: 1;
   }
 
+  .testimonial{
+    flex-direction: column;
+    align-items: center;
+  }
+
   .testimonial_avator{
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
+  }
+
+  .testimonial_avator:nth-child(even),
+  .testimonial_avator:nth-child(odd){
+    margin: 0;
+    margin-bottom: 8px;
+  }
+
+  .testimonial_speech-bubble{
+    order: 1;
+  }
+  .arrow-btn{
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    bottom: 16px;
+    right: 16px;
   }
 }
 
