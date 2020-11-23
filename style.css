@@ -151,14 +151,14 @@ padding: 8px 12px;
 margin: 0 4px;
 cursor: pointer;
 border-radius: var(--size-border-radius);
-}
-
-.navbar_menu_item.active{
-border: 1px solid var(--color-white);
+border: 1px solid transparent;
+border-radius: var(--size-border-radius);
 }
 
 .navbar_menu_item:hover{
-background-color: var(--color-dark-pink);
+  border-color: var(--color-white);
+  background-color: var(--color-dark-pink);
+  border-radius: var(--size-border-radius);
 }
 
 .navbar_toggle-btn{
@@ -391,13 +391,13 @@ font-size: var(--font-regular);
 padding: 8px 48px;
 }
 
-.category_btn.active,
+.category_btn.selected,
 .category_btn:hover{
 background-color: var(--color-pink);
 color: var(--color-white);
 }
 
-.category_btn.active .category_count,
+.category_btn.selected .category_count,
 .category_btn:hover .category_count
 {
 opacity: 1;

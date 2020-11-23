@@ -81,9 +81,15 @@ workCategories.addEventListener('click',(event)=>{
         console.log('Error return null');
         return;
     }
-    workProjects.classList.add('animation-out');
-    
 
+    // Remove selection from the previous item ans select the new one
+    const active = document.querySelector('.category_btn.selected');
+    active.classList.remove('selected');
+
+    const target = event.target.nodeName === 'BUTTON' ? event.target : event.target.parentNode;
+    target.classList.add('selected');
+
+    workProjects.classList.add('animation-out');
     setTimeout(() => {
         projects.forEach((project)=>{
             if(filter ==='*' || filter === project.dataset.type){
