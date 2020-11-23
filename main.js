@@ -24,6 +24,7 @@ navbarMenu.addEventListener('click',(event)=>{
     }
     navbarMenu.classList.remove('open');
     scrollIntoView(link);
+    
 });
 
 
@@ -42,14 +43,8 @@ homeContact.addEventListener('click',()=>{
     scrollIntoView('#contact');
 });
 
-function scrollIntoView(selector){
-    const yOffset = -20; 
-    const select = document.querySelector(selector);
-    console.log(select);
-    const height = select.getBoundingClientRect().top + window.pageYOffset + yOffset;
-    console.log(height);
-    window.scrollTo({top: height, behavior: 'smooth'});
-}
+
+
 
 
 
@@ -74,8 +69,7 @@ document.addEventListener('scroll',()=>{
 });
 
 arrow.addEventListener('click',()=>{
-    const scrollTo = document.querySelector('#home');
-    scrollTo.scrollIntoView({behavior:'smooth'});
+    scrollIntoView('#home');
 });
 
 
@@ -120,7 +114,79 @@ workCategories.addEventListener('click',(event)=>{
 
 
 
+// 스크롤에 foreach 넣어서 계속 돌리면 부담된다
 
+// 1. 모든 섹션 요소들과 메뉴 아이템들을 가지고 온다.
+// 2. IntersectionObserver를 이용해서 모든 섹션들을 관찰한다.
+// 3. 보여지는 섹션에 해당하는 메뉴 아이템을 활성화 시킨다
+
+// 1
+const sectionnIds = [
+    '#home',
+    '#about',
+    '#skills',
+    '#project',
+    '#testimonials',
+    '#contact',
+];
+
+const sections = sectionnIds.map(id => document.querySelector(id));
+const navItems = sectionnIds.map(id => 
+    document.querySelector(`[data-link="${id}"]`)
+);
+
+// 2 3
+let selectedNavIndex = 0;
+let selectedNavItem = navItems[0];
+
+function selectNavItem(selected){
+    selectedNavItem.classList.remove('active');
+    selectedNavItem = selected;
+    selectedNavItem.classList.add('active');
+}
+
+const yOffset = -20; 
+function scrollIntoView(selector){
+    const select = document.querySelector(selector);
+    const height = select.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({top: height, behavior: 'smooth'});
+
+    selectNavItem(navItems[sectionnIds.indexOf(selector)]);
+}
+
+const observerOptions ={
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.3,
+}
+
+const observerCallback = (entries, observer)=>{
+    entries.forEach(entry => {
+        // 그냥 들어오는것만하면 처음에 생성될때도 있어서 추가로 조건추가 화면에 들어왔는지
+        if(!entry.isIntersecting && entry.intersectionRatio > 0){
+            const index = sectionnIds.indexOf(`#${entry.target.id}`);
+
+            if(entry.boundingClientRect.y < 0){
+                selectedNavIndex = index + 1;
+            }
+            else{
+                selectedNavIndex = index - 1;
+            }
+        }
+    });
+};
+const observer = new IntersectionObserver(observerCallback, observerOptions);
+sections.forEach(section => observer.observe(section));
+
+window.addEventListener('wheel', () => {
+    if(window.scrollY ===0){
+        selectedNavIndex = 0;
+    }
+    else if(window.scrollY + window.innerHeight === document.body.clientHeight){
+        selectedNavIndex = navItems.length - 1;
+    }
+    selectNavItem(navItems[selectedNavIndex]);
+});
 
 
 
