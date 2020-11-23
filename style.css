@@ -67,6 +67,13 @@ border: none;
 outline: none;
 }
 
+
+
+
+
+
+
+
 /* Typography */
 h1{
 font-size: var(--font-large);
@@ -76,7 +83,7 @@ margin: 16px 0px;
 }
 
 h2{
-font-size: var(--font-regular);
+font-size: var(--font-medium);
 font-weight: var(--weight-semi-bold);
 color: var(--color-black);
 margin: 8px 0;
@@ -96,13 +103,37 @@ color: var(--color-black);
 margin: 4px 0;
 }
 
+
+
+
+
+
+
+
+
+
+/* Navbar */
 #navbar{
-display: flex;
-justify-content: space-between;
-background-color: var(--color-pink);
-align-items: center;
-color: var(--color-white);
-padding: 16px;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color:  transparent;
+  align-items: center;
+  color: var(--color-white);
+  padding: 16px;
+  transition: all var(--animation-duration) ease-in-out;
+  z-index: 1;
+}
+
+/* navbar가 스크르롤 될때
+navbar가 내려가는 만큼 변하는데
+navbar 길이만큼 내려가면  
+gogo main.js*/
+
+#navbar.navbar_dark{
+  background-color: var(--color-pink);
+  padding: 8px;
 }
 
 .navbar_logo{
@@ -120,21 +151,56 @@ padding: 8px 12px;
 margin: 0 4px;
 cursor: pointer;
 border-radius: var(--size-border-radius);
-}
-
-.navbar_menu_item.active{
-border: 1px solid var(--color-white);
+border: 1px solid transparent;
+border-radius: var(--size-border-radius);
 }
 
 .navbar_menu_item:hover{
-background-color: var(--color-dark-pink);
+  border-color: var(--color-white);
+  background-color: var(--color-dark-pink);
+  border-radius: var(--size-border-radius);
+}
+
+.navbar_toggle-btn{
+  position: absolute;
+  right: 32px;
+  font-size: 24px;
+  color: var(--color-white);
+  top: 16px;
+  display: none;
+}
+
+.arrow-btn{
+  position: fixed;
+  bottom: 50px;
+  right: 50px; 
+
+  color: var(--color-white);
+  background-color: var(--color-pink);
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  font-size: 50px;
+
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--animation-duration) ease-in;
+}
+
+.arrow-btn.visible{
+  opacity: 1;
+  pointer-events: auto;
 }
 
 
+
+/* Home */
 #home{ 
-background: url(images/background.png) center/cover no-repeat;
-padding: 40px;
-text-align: center;
+  background: url(images/background.png) center/cover no-repeat;
+  padding: 40px;
+  padding-top: 120px;
+  text-align: center;
+  opacity: 1;
 }
 
 .home_avatar{
@@ -159,6 +225,12 @@ border: 2px solid var(--color-white);
 border-radius: var(--size-border-radius);
 }
 
+
+
+
+
+
+
 /* Section common */
 .section{
 padding: 50px;
@@ -170,6 +242,11 @@ margin: auto;
 max-width: 1200px;
 margin: auto;
 }
+
+
+
+
+
 
 /* About */
 .about_majors{
@@ -237,6 +314,9 @@ font-size: var(--font-micro);
 
 
 
+
+
+
 /* Skill */
 #skills{
 background-color: var(--color-yellow); 
@@ -294,8 +374,12 @@ padding: 20px;
 }
 
 
-/* Work */
 
+
+
+
+
+/* Work */
 .work_category{
 margin: 40px;
 }
@@ -307,13 +391,13 @@ font-size: var(--font-regular);
 padding: 8px 48px;
 }
 
-.category_btn.active,
+.category_btn.selected,
 .category_btn:hover{
 background-color: var(--color-pink);
 color: var(--color-white);
 }
 
-.category_btn.active .category_count,
+.category_btn.selected .category_count,
 .category_btn:hover .category_count
 {
 opacity: 1;
@@ -340,6 +424,12 @@ transition: all var(--animation-duration) ease-in;
 display: flex;
 flex-wrap: wrap;
 justify-content: center;
+transition: all var(--animation-duration) ease-out;
+}
+
+.work_projects.animation-out{
+  opacity: 0;
+  transform: scale(0.96) translateY(40px);
 }
 
 .project{
@@ -351,6 +441,10 @@ width: 280px;
 height: 250px;
 margin: 2px;
 background-color: var(--color-light-white)
+}
+
+.project.invisible{
+  display: none;
 }
 
 .project_img {
@@ -380,7 +474,7 @@ transform: translateY(0px);
 }
 
 .project_description h3{
-color: var(--color-white);
+color: var(--color-orange);
 }
 
 .project_description h3::after{
@@ -388,12 +482,141 @@ content: '';
 display: block;
 position: relative;
 left: 50%;
-margin-left: -12px;
+transform: translateX(-50%);
 margin-top: 8px;
-width: 25px;
+width: 50px;
 height: 2px;
 background-color: var(--color-dark-white);
+} 
+
+
+
+
+
+/* Testimonial */
+#testimonials{
+  background-color: var(--color-light-white);
 }
+
+.testimonials{
+  margin: 40px;
+}
+
+.testimonial{
+  display: flex;
+  margin: 32px 0;
+  justify-content: center;
+}
+
+.testimonial_avator{
+  width: 150px;
+  height: 150px;
+  background-color: var(--color-pink);
+  border-radius: 50%;
+  margin: 12px;
+}
+
+.testimonial_avator:nth-child(odd){
+  margin-right: 40px;
+}
+
+.testimonial_avator:nth-child(even){
+  margin-left: 40px;
+}
+
+.testimonial_speech-bubble{
+  padding: 18px;
+  background-color: var(--color-white);
+  border-radius: var(--size-border-radius);
+}
+
+.testimonial_speech-bubble p{
+  color: var(--color-light-grey);
+}
+
+.testimonial_speech-bubble a{
+  color: var(--color-pink);
+}
+
+
+/* Contact */
+#contact{
+  background-color: var(--color-pink);
+}
+
+.contact_title,
+.contact_email,
+.contact_rights{
+  color: var(--color-white);
+}
+
+.contact_title{
+  margin: 32px 0;
+}
+.contact_links{
+  font-size: var(--font-large);
+  margin: 24px 0;
+}
+
+.contact_links i:hover{
+  transform: scale(1.1);
+  color: var(--color-yellow);
+  transition: all var(--animation-duration) ease-in;
+}
+
+
+
+
+/* For below 768px screen Width*/
+/* 햄버거 버튼을 여기에다가 적어주면 될거같지만
+미디어 쿼리에는 최소한의 것만 들어가야한다 
+즉 미디어쿼리가 있던없던 토글 버튼은 HTML에 무조건 들어가있는다 
+미디어쿼리는 스크린 사이즈가 작을때만 들어가는거기때문에 
+밖에 가려지는걸 만들자*/
+@media screen and (max-width: 768px){
+  .navbar_toggle-btn{
+    display: block;
+  }
+  
+  #navbar{
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: var(--color-pink);
+  }
+
+  .navbar_menu{
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    display: none
+  }
+
+  .navbar_menu.open{
+    display: block;
+  }
+
+  .about_majors{
+    flex-direction: column;
+  }
+
+  .major{
+    margin-bottom: 38px;
+  }
+
+  .skillset{
+    flex-direction: column;
+  }
+
+  .project{
+    flex-grow: 1;
+  }
+
+  .testimonial_avator{
+    width: 80px;
+    height: 80px;
+  }
+}
+
 
 
 
